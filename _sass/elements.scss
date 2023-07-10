@@ -17,6 +17,11 @@ ol {
     padding-left: 0;
 }
 
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 .btn {
     @include btn_defaults;
     transition: all .1s ease-in;

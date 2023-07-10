@@ -1,0 +1,29 @@
+---
+layout: page
+---
+
+<section class="section blog">
+
+    <div class="container">
+
+        <div class="blog-content">
+
+            <div class="blog-sidebar">
+            <h2>Categories</h2>
+            <ul>
+            {% for category in site.categories %}
+              <li><a href="{{category.url}}"><strong>{{category|first}}</strong></a></li>
+            {% endfor %}
+            </ul>
+            <h2>Top Posts</h2>
+            </div>
+
+            <div class="blog-list">
+              {% include blogs.html %}
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

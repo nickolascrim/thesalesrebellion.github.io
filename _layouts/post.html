@@ -1,11 +1,22 @@
 ---
 layout: default
+pagination:
+  enabled: true
+  collection: posts
 ---
 
-<div class="row">
-  <div class="column">
-    <img src="{{ page.image }}" style="width:100%" />
-    <h1>{{ page.title }}</h1>
-    <p>{{ page.content }}</p>
+<section class="section" style="background: url('/img/bg-blog-grid.png') center repeat">
+  <img src="{{ page.image }}" style="position: absolute;width: 100%" />
+  <div class="container" style="background:#fff;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);color:#000; padding-top: 40px; position: relative">
+    <div style="margin-top: 200px">
+      <h1 style="font-size: 36px;margin-top:0">{{ page.title }}</h1>
+      <p>{{ page.content }}</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <a class="btn btn--blue{% unless page.previous.url %} disabled{% endunless %}" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" title="{{ page.previous.title }}">Previous</a>
+    <a class="btn btn--blue{% unless page.next.url %} disabled{% endunless %}" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" title="{{page.next.title}}">Next</a>
   </div>
 </div>

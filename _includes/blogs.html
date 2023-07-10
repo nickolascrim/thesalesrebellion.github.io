@@ -1,0 +1,10 @@
+<div style="display: flex;gap: 20px; flex-direction: row; flex-wrap: wrap;">
+{% for blog in site.posts %}
+<div style="flex-grow: 1;max-width: 47%">
+  <img src="{{ blog.image }}" />
+  <h3>{{ blog.title }}</h3>
+  <p>{{ blog.content | truncatewords: 50 }}</p>
+  <a href="{{ blog.url }}">Read More</a>
+</div>
+{% endfor %}
+</div>
